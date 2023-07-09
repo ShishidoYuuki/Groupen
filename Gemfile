@@ -42,6 +42,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# ログイン機能の実装のためのOdevice
+gem 'devise'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -64,9 +66,10 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  group :development, :test do
+    gem 'rspec-rails', '~> 4.0.0' #Rails 5.xでRspecを使用する場合、このようにバージョン指定する。
+    gem 'factory_bot_rails'
+    gem "capybara"
+    gem "selenium-webdriver"
+    gem "webdrivers"
 end
