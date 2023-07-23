@@ -33,3 +33,18 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore the Gemfile.lock file
+Gemfile.lock
+
+# Ignore the vendor directory
+vendor/
+
+# Ignore log files
+log/
+
+# Ignore .env file
+.env
+
+# Ignore .txt files
+*.txt
