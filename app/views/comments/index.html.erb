@@ -11,3 +11,17 @@
   <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
   <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
 <% end %>
+
+   <!-- 掲示板一覧 -->
+   <div class="row">
+     <div class="col-12">
+       <div class="row">
+         <% if @events.present? %>
+           <%= render @events %>
+         <% else %>
+           <p><%= t('.no_result') %></p>
+         <% end %>
+       </div>
+     </div>
+      <%= link_to "イベント作成", new_event_path, class: 'post' %>
+   </div>
