@@ -10,8 +10,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to events_path, notice: "イベントを作成しました。"
+      redirect_to root_path, notice: "投稿が成功しました。"
     else
+      flash.now[:alert] = "投稿ができませんでした。すまん"
       render :new
     end
   end
@@ -19,6 +20,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :date, :tag)
+    params.require(:event).permit(:title, :date, :tag , :body)
   end
 end
