@@ -8,9 +8,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    # @event = current_user.events.build(event_params)
     @event = Event.new(event_params)
-    if @event.save!
+    if @event.save
       redirect_to root_path, notice: "投稿が成功しました。"
     else
       flash.now[:alert] = "投稿ができませんでした。すまん"
