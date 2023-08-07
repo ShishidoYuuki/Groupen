@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'comments/index'
   root 'comments#index'
 
-  resources :events, only: %i[index new create]
+  resources :events, only: %i[index new create update destroy edit]
 
 end

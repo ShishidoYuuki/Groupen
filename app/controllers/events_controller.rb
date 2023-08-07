@@ -7,6 +7,10 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+    @event = Event.find(params.[:id])
+  end
+
   def create
     @event = Event.new(event_params)
     if @event.save
@@ -15,6 +19,20 @@ class EventsController < ApplicationController
       flash.now[:alert] = "投稿ができませんでした。すまん"
       render :new
     end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to root_path, notice: "投稿を更新しました"
+    end
+    render :new
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to root_path, notice: "投稿を削除しました"
   end
 
   private
