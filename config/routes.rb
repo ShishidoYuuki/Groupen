@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   root 'comments#index'
 
   resources :events, only: %i[index new create update destroy edit]
+  resources :user_comments, only: %i[create edit update destroy]
 
 end
