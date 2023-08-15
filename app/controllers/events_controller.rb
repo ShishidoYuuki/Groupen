@@ -12,7 +12,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = Event.new(
+      content: params[:content],
+      user_id: @current_user.id
+    )
     if @event.save
       redirect_to root_path, notice: "投稿が成功しました。"
     else

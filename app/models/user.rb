@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :events, dependent: :destroy
 
+
+  def posts
+    return Event.where(user_id: self.id)
+  end
 end
