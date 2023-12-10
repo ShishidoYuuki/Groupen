@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_135524) do
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
