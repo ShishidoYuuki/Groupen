@@ -1,0 +1,6 @@
+/* custom.css */
+
+.table-cell {
+  border: 1px solid #ccc; /* セルに1pxのグレーの線を付ける */
+  padding: 5px; /* セル内のコンテンツと線の間に余白を設定 */
+}

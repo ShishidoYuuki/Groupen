@@ -1,0 +1,13 @@
+<h1>events#edit</h1>
+<span>現在ログイン中のユーザー：<%= current_user.name %></span>
+<%= form_for(@event, url: event_path(@event)) do |form| %>
+    <div>
+        <%= form.label :タイトル %><br>
+        <%= form.text_field :title, autofocus: true, :placeholder =>"#{@event.title}" %>
+    </div>
+    <div>
+        <%= form.label :中身 %><br>
+        <%= form.text_area :body, :placeholder =>"#{@event.body}" %>
+    </div>
+    <div><%= form.submit "更新する" %></div>
+<% end %>
