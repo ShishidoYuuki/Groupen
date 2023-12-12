@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+ .flash-message {
+border-radius: 5px;
+padding: 16px 24px;
+margin: 16px 0px;
+}
+
+.flash-message.notice {
+background-color: #bcdfff;
+color: #0067C0;
+border: solid 1px #0067C0;
+}
+
+.flash-message.alert {
+background-color: #ffd4d1;
+color: #930403;
+border: solid 1px #930403;
+}header {
+background-color: black; /* ヘッダーの背景色を黒に設定 */
+padding: 20px; /* パディングを追加してバーを広くする（必要に応じて調整） */
+}
+
+nav {
+display: flex;
+justify-content: flex-end; /* ナビゲーションを右寄せにする */
+}
+
+nav ul {
+list-style-type: none; /* リストのマーカーを削除 */
+margin: 0;
+padding: 0;
+}
+
+nav ul li {
+display: inline-block; /* リストアイテムを横並びにする */
+margin-left: 20px; /* 各リンクの間隔を調整 */
+}
+
+nav a {
+color: white; /* ナビゲーションリンクの色を白に設定 */
+text-decoration: none; /* 下線を削除 */
+}
